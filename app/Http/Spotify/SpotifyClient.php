@@ -16,6 +16,11 @@ class SpotifyClient
 		return json_decode($this->client->get($endpoint)->getBody());
 	}
 
+	public function getAlbumById($id)
+	{
+		return $this->request('albums/' . $id);
+	}
+
 	public function getAlbumsByArtistId($id, $country)
 	{
 		return $this->request('artists/' . $id . '/albums?market=' . $country);
