@@ -92,7 +92,7 @@
 								</a>{{ $loop->last ? '' : ',' }}
 
 								@if ($loop->iteration == 2 && $loop->count > 2)
-									and more...
+									<span class="dn di-ns">and more</span>...
 								@endif
 
 								@break($loop->iteration == 2)
