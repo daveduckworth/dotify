@@ -67,6 +67,52 @@
 	</article>
 
 	<article class="pa1 pa3-ns tc bb b--black-10">
+		<h2 class="f3 fw4 pa4 mv0">Top Tracks</h2>
+
+		<table class="collapse ba br2 b--black-10 pv2 ph3 w-100">
+			<tbody>
+				<tr class="striped--near-white">
+					<th class="pv2 ph3 tl f6 fw6 ttu">&#35;</th>
+					<th class="pv2 ph3 tl f6 fw6 ttu">Track Name</th>
+					<th class="pv2 ph3 tl f6 fw6 ttu">Artist</th>
+					<th class="pv2 ph3 tl f6 fw6 ttu">Album</th>
+					<th class="pv2 ph3 tl f6 fw6 ttu">Duration</th>
+					<th class="pv2 ph3 tl f6 fw6 ttu">Popularity</th>
+				</tr>
+
+				@foreach ($topTracks->tracks as $track)
+					<tr class="striped--near-white">
+						<td class="pv2 ph3 tl">{{ $loop->iteration }}</td>
+
+						<td class="pv2 ph3 tl">
+							<a href="/tracks/{{ $track->id }}" class="dib link dark-gray dim">
+								{{ $track->name }}
+							</a>
+						</td>
+
+						<td class="pv2 ph3 tl">
+							@foreach ($track->artists as $trackArtist)
+								<a href="/artists/{{ $trackArtist->id }}" class="dib link dark-gray dim">
+									{{ $trackArtist->name }}
+								</a>{{ $loop->last ? '' : ',' }}
+							@endforeach
+						</td>
+
+						<td class="pv2 ph3 tl">
+							<a href="/albums/{{ $track->album->id }}" class="dib link dark-gray dim">
+								{{ $track->album->name }}
+							</a>
+						</td>
+
+						<td class="pv2 ph3 tl">{{ $track->duration_ms }} ms</td>
+						<td class="pv2 ph3 tl">{{ $track->popularity }}&#37;</td>
+					</tr>
+				@endforeach
+			</tbody>
+		</table>
+	</article>
+
+	<article class="pa1 pa3-ns tc bb b--black-10">
 		<h2 class="f3 fw4 pa4 mv0">Related Artists</h2>
 
 		<section class="cf w-100 pa2-ns">
