@@ -31,6 +31,11 @@ class SpotifyClient
 		return $this->request('artists/' . $id);
 	}
 
+	public function getTrackById($id)
+	{
+		return $this->request('tracks/' . $id);
+	}
+
 	public function getRelatedArtistsByArtistId($id)
 	{
 		return $this->request('artists/' . $id . '/related-artists');
