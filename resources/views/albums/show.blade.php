@@ -3,9 +3,17 @@
 @section('content')
 
 	<header class="tc pv4 pv5-ns bb b--black-10">
-		<img src="{{ $album->images[1]->url }}" class="br-100 pa1 ba b--black-10 h4 w4 h5-ns w5-ns" alt="{{ $album->name }} Image">
+		<img src="{{ $album->images[1]->url }}" class="br-100 pa1 ba b--black-10 h4 w4 h5-ns w5-ns" alt="{{ $album->name }} Album Cover">
+
 		<h1 class="f3 f2-ns fw4 mid-gray">{{ $album->name }}</h1>
-		<h2 class="f6 gray fw2 ttu tracked">{{ $album->artists[0]->name }}</h2>
+
+		<h2 class="f6 fw2 ttu tracked">
+			@foreach ($album->artists as $artist)
+				<a href="/artists/{{ $artist->id }}" class="link dim gray">
+						{{ $artist->name }}{{ $loop->last ? '' : ',' }}
+				</a>
+			@endforeach
+		</h2>
 
 		<a class="f6 link dim br1 ba ph3 pv2 mb2 mt4 mr4 dib dark-green" href="{{ $album->uri }}">
 			<i class="fa fa-fw fa-spotify" aria-hidden="true"></i>
