@@ -85,11 +85,17 @@
 							</a>
 						</h1>
 
-						<h2 class="f6 fw4 mt0 mb0 black-60 tl">
+						<h2 class="f6 fw4 mt0 mb0 black-60 tl silver">
 							@foreach ($track->artists as $trackArtist)
 								<a href="/artists/{{ $trackArtist->id }}" class="dib link silver dim">
 									{{ $trackArtist->name }}
 								</a>{{ $loop->last ? '' : ',' }}
+
+								@if ($loop->iteration == 2 && $loop->count > 2)
+									and more...
+								@endif
+
+								@break($loop->iteration == 2)
 							@endforeach
 						</h2>
 					</div>
