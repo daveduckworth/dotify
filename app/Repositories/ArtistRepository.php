@@ -23,7 +23,7 @@ class ArtistRepository
 
 	public function getTopTracks($artistId, $country = 'GB')
 	{
-		return $this->spotify->getTopTracksByArtistId($id, $country);
+		return $this->spotify->getTopTracksByArtistId($artistId, $country);
 	}
 
 	public function getRelatedArtists($artistId)
