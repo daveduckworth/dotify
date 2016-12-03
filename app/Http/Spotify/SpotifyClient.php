@@ -46,6 +46,11 @@ class SpotifyClient
 		return $this->request('artists/'. $id . '/top-tracks?country=' . $country);
 	}
 
+	public function searchAlbums($query)
+	{
+		return $this->request('search?q=' . $query . '&type=album');
+	}
+
 	public function searchArtists($query)
 	{
 		return $this->request('search?q=' . $query . '&type=artist');
