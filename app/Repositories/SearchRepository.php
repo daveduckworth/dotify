@@ -11,6 +11,11 @@ class SearchRepository
 		$this->spotify = $spotify;
 	}
 
+	public function albums($query)
+	{
+		return $this->spotify->searchAlbums($query);
+	}
+
 	public function artists($query)
 	{
 		return $this->spotify->searchArtists($query);
