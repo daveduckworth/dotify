@@ -20,6 +20,7 @@ class SearchController extends Controller
     public function index(Request $request)
     {
         return view('search.index', [
+            'albums'  => $this->search->albums($request->get('query')),
             'artists' => $this->search->artists($request->get('query'))
         ]);
     }
