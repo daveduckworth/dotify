@@ -54,7 +54,8 @@ class ArtistController extends Controller
         return view('artists.show', [
             'albums'         => $this->artist->getAlbums($id),
             'artist'         => $this->artist->getById($id),
-            'relatedArtists' => $this->artist->getRelatedArtists($id)
+            'relatedArtists' => $this->artist->getRelatedArtists($id),
+            'topTracks'      => $this->artist->getTopTracks($id),
         ]);
     }
 
