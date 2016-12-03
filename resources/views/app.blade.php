@@ -16,10 +16,7 @@
             <nav class="pa3 pa4-ns bb b--black-10">
                 <a class="link dim black b f6 f5-ns dib mr3" href="/" title="Home">dotify</a>
 
-                <a class="link dim gray f6 f5-ns dib mr3" href="#" title="Link">Link</a>
-                <a class="link dim gray f6 f5-ns dib mr3" href="#" title="Link">Link</a>
-                <a class="link dim gray f6 f5-ns dib mr3" href="#" title="Link">Link</a>
-                <a class="link dim gray f6 f5-ns dib" href="#" title="Link">Link</a>
+                <a class="link dim gray f6 f5-ns dib mr3" href="/search/create" title="Link">Search</a>
             </nav>
 
     	   @yield('content')
