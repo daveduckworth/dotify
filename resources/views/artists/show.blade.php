@@ -102,8 +102,6 @@
 
 					<div class="dtc v-mid">
 						<div class="w-100 tr">
-							<span class="f6 light-silver mr1">{{ gmdate('i:s', $track->duration_ms / 1000) }}</span>
-
 							<button class="f6 button-reset bg-white ba b--black-10 dim pointer pv1 black-60">
 								<i class="fa fa-fw fa-play" aria-hidden="true"></i>
 
